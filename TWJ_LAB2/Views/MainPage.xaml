@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TWJ_LAB2.MainPage">
-
+             x:Class="TWJ_LAB2.Views.MainPage"
+             xmlns:models="clr-namespace:TWJ_LAB2.Models"
+             xmlns:viewmodels="clr-namespace:TWJ_LAB2.ViewModels">
     <Grid RowDefinitions="80, Auto, *" RowSpacing="0">
 
         <Grid Grid.Row="0" BackgroundColor="#6A1B9A" RowDefinitions="30, *" RowSpacing="0">
@@ -12,7 +13,7 @@
                     Margin="15, 5, 0, 0"
                     HorizontalOptions="Start"/>
             <Label Grid.Row="1" 
-                    Text="Tiong Wei Jie BCS23020014" 
+                    Text="{Binding PetDetails.StudentInfo}" 
                     TextColor="White" 
                     FontSize="16" 
                     FontAttributes="Bold"
@@ -21,7 +22,7 @@
         </Grid>
 
         <Image Grid.Row="1" 
-               Source="dog.jpg" 
+               Source="{Binding PetDetails.PetImageSource}" 
                Aspect="AspectFill" 
                HeightRequest="300" 
                Margin="0"/>
@@ -46,35 +47,35 @@
 
                         <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
                             <StackLayout Grid.Column="0">
-                                <Label Text="Robin Hood" 
+                                <Label Text="{Binding PetDetails.PetName}" 
                                        TextColor="#000000"
                                        FontSize="24" 
                                        FontAttributes="Bold"/>
-                                <Label Text="Pug" 
+                                <Label Text="{Binding PetDetails.PetBreed}" 
                                        TextColor="#FFC107" 
                                        FontAttributes="Bold" 
                                        FontSize="16" />
                             </StackLayout>
 
                             <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalOptions="End" VerticalOptions="Start">
-                                <Label Text="1 year old" 
+                                <Label Text="{Binding PetDetails.PetAge}" 
                                        TextColor="Gray" 
                                        FontSize="14"/>
-                                <Label Text="♂" 
+                                <Label Text="{Binding PetDetails.PetGender}" 
                                        FontSize="24" 
                                        TextColor="#FFC107"/>
                             </StackLayout>
                         </Grid>
 
                         <Label Grid.Row="1" 
-                               Text="3B,Lorong 88, Taman Rantau Panjang" 
+                               Text="{Binding PetDetails.PetAddress}" 
                                TextColor="Gray" 
                                FontSize="12"/>
                     </Grid>
                 </Border>
 
                 <Grid Grid.Row="2" ColumnDefinitions="40, *, Auto" VerticalOptions="Center" Margin="0, 10, 0, 0">
-                    <Image Source="owner1.jpeg" 
+                    <Image Source="{Binding PetDetails.OwnerImageSource}" 
                            HeightRequest="40" 
                            WidthRequest="40" 
                            Aspect="AspectFill">
@@ -83,22 +84,22 @@
                         </Image.Clip>
                     </Image>
                     <StackLayout Grid.Column="1" Margin="10, 0, 0, 0">
-                        <Label Text="Tiong Wei Jie" 
+                        <Label Text="{Binding PetDetails.OwnerName}" 
                                TextColor="Gray" 
                                FontSize="14" 
                                FontAttributes="Bold"/>
-                        <Label Text="Owner" 
+                        <Label Text="{Binding PetDetails.OwnerRole}" 
                                TextColor="Gray" 
                                FontSize="12"/>
                     </StackLayout>
-                    <Label Grid.Column="2" Text="11/11/2024" 
+                    <Label Grid.Column="2" Text="{Binding PetDetails.AdoptionDate}" 
                            TextColor="Gray" 
                            FontSize="12" 
                            VerticalOptions="Center"/>
                 </Grid>
 
                 <Label Grid.Row="3" 
-                       Text="Hi! Robin the Pug is simply a tiny tornado of fur, wrinkles, and endless charm!" 
+                       Text="{Binding PetDetails.PetDescription}" 
                        FontSize="14" 
                        LineHeight="1.2"
                        TextColor="Gray"
@@ -111,14 +112,16 @@
                             BackgroundColor="#EDEDED" 
                             TextColor="#FFC107" 
                             CornerRadius="25"
-                            HeightRequest="50" WidthRequest="50"/>
+                            HeightRequest="50" WidthRequest="50"
+                            Command="{Binding FavoriteCommand}"/>
                     <Button Grid.Column="1" 
-                            Text="Adoption" 
+                            Text="{Binding AdoptionButtonText}"
                             FontSize="18" 
                             BackgroundColor="#FFC107" 
                             TextColor="White" 
                             CornerRadius="25"
-                            HeightRequest="50"/>
+                            HeightRequest="50"
+                            Command="{Binding AdoptCommand}"/>
                 </Grid>
 
             </Grid>
