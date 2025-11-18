@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TWJ_LAB2.MainPage">
+
+    <Grid RowDefinitions="80, Auto, *" RowSpacing="0">
+
+        <Grid Grid.Row="0" BackgroundColor="#6A1B9A" RowDefinitions="30, *" RowSpacing="0">
+            <Label Grid.Row="0" 
+                    TextColor="White" 
+                    FontSize="12" 
+                    Margin="15, 5, 0, 0"
+                    HorizontalOptions="Start"/>
+            <Label Grid.Row="1" 
+                    Text="Tiong Wei Jie BCS23020014" 
+                    TextColor="White" 
+                    FontSize="16" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Start"/>
+        </Grid>
+
+        <Image Grid.Row="1" 
+               Source="dog.jpg" 
+               Aspect="AspectFill" 
+               HeightRequest="300" 
+               Margin="0"/>
+
+        <Border Grid.Row="2"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 30,30,0,0"  
+                Margin="0, -30, 0, 0" 
+                Padding="20, 0, 20, 20"
+                StrokeThickness="0">
+
+            <Grid RowDefinitions="Auto, 10, Auto, Auto, 60" RowSpacing="0">
+
+                <Border Grid.Row="0"
+                        BackgroundColor="#FFFDE0" 
+                        StrokeShape="RoundRectangle 10" 
+                        Padding="15, 10" 
+                        Margin="-20, 0, -20, 0"
+                        StrokeThickness="0">
+
+                    <Grid RowDefinitions="Auto, Auto" RowSpacing="5">
+
+                        <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                            <StackLayout Grid.Column="0">
+                                <Label Text="Robin Hood" 
+                                       TextColor="#000000"
+                                       FontSize="24" 
+                                       FontAttributes="Bold"/>
+                                <Label Text="Pug" 
+                                       TextColor="#FFC107" 
+                                       FontAttributes="Bold" 
+                                       FontSize="16" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalOptions="End" VerticalOptions="Start">
+                                <Label Text="1 year old" 
+                                       TextColor="Gray" 
+                                       FontSize="14"/>
+                                <Label Text="♂" 
+                                       FontSize="24" 
+                                       TextColor="#FFC107"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Grid.Row="1" 
+                               Text="3B,Lorong 88, Taman Rantau Panjang" 
+                               TextColor="Gray" 
+                               FontSize="12"/>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="2" ColumnDefinitions="40, *, Auto" VerticalOptions="Center" Margin="0, 10, 0, 0">
+                    <Image Source="owner1.jpeg" 
+                           HeightRequest="40" 
+                           WidthRequest="40" 
+                           Aspect="AspectFill">
+                        <Image.Clip>
+                            <EllipseGeometry RadiusX="20" RadiusY="20" Center="20, 20" />
+                        </Image.Clip>
+                    </Image>
+                    <StackLayout Grid.Column="1" Margin="10, 0, 0, 0">
+                        <Label Text="Tiong Wei Jie" 
+                               TextColor="Gray" 
+                               FontSize="14" 
+                               FontAttributes="Bold"/>
+                        <Label Text="Owner" 
+                               TextColor="Gray" 
+                               FontSize="12"/>
+                    </StackLayout>
+                    <Label Grid.Column="2" Text="11/11/2024" 
+                           TextColor="Gray" 
+                           FontSize="12" 
+                           VerticalOptions="Center"/>
+                </Grid>
+
+                <Label Grid.Row="3" 
+                       Text="Hi! Robin the Pug is simply a tiny tornado of fur, wrinkles, and endless charm!" 
+                       FontSize="14" 
+                       LineHeight="1.2"
+                       TextColor="Gray"
+                       Margin="0, 10, 0, 10"/>
+
+                <Grid Grid.Row="4" ColumnDefinitions="60, *" ColumnSpacing="15" Margin="0, 5, 0, 0" VerticalOptions="Start">
+                    <Button Grid.Column="0" 
+                            Text="♥" 
+                            FontSize="20"
+                            BackgroundColor="#EDEDED" 
+                            TextColor="#FFC107" 
+                            CornerRadius="25"
+                            HeightRequest="50" WidthRequest="50"/>
+                    <Button Grid.Column="1" 
+                            Text="Adoption" 
+                            FontSize="18" 
+                            BackgroundColor="#FFC107" 
+                            TextColor="White" 
+                            CornerRadius="25"
+                            HeightRequest="50"/>
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
